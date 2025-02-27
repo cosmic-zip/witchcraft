@@ -97,7 +97,7 @@ fn main() {
 
     let init = thread::spawn(move || {
         init(argsv);
-        done_clone.store(true, Ordering::SeqCst);
+        done_clone.store(true, Ordering::Relaxed);
     });
 
     init.join().unwrap();
