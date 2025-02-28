@@ -1,6 +1,6 @@
-![banner](docs/documentation/media_kit/splited.png)
+![banner](docs/images/splited.png)
 
-![banner](docs/documentation/images/lineBar.png)
+![banner](docs/images/lineBar.png)
 
 [![witchcraft-cybersecurity](https://snapcraft.io/witchcraft-cybersecurity/badge.svg)](https://snapcraft.io/witchcraft-cybersecurity)
 ![witchcraft](https://img.shields.io/github/actions/workflow/status/cosmic-zip/witchcraft/witchcraft.yml)
