@@ -69,7 +69,7 @@ The project initially includes a set of default files created using advanced dat
 
 ## Spellbook Package Includes:
 
-- Unique Wordlists: _moth_ (16GB) and _ladybug_ (1GB)
+- Unique Wordlists: _moth_ and _ladybug_
 - Default Credentials Database
 - IP Geolocation and Reputation/Score
 - Social Media Pages for Evil Twin Attacks
@@ -79,13 +79,13 @@ The project initially includes a set of default files created using advanced dat
 - XSS Wordlist
 - And more!
 
-### Optional Wordlists and Malware Signatures
+The spellbook has now been fully compressed and is 590MB in size. To download it,
+please check the README page for the updated link. If you are using the complete
+distribution package, you do not need to perform this step.
 
-These files (700MB) can be downloaded using:
+- To install the complete spellbook, simply download and copy it to: /var/spellbook
 
-```bash
-git clone https://github.com/cosmic-zip/witchcraft-wordlists /var/spellbook/
-```
+**link:** https://limewire.com/d/78693105-85b5-4e1f-b8f7-f1a14c598d6b#NS9Qgl0Lc-aofG86s6cBzWYCuV35yY7ErH6YZ4pxSIQ
 
 # EVILPAGES
 

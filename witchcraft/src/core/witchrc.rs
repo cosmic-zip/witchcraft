@@ -1,4 +1,4 @@
-use crate::core::core::get_os_env;
+use crate::core::core::get_os_env_paths_only;
 use std::fs;
 
 /// Checks if the configuration file `.witchrc` exists in the user's home directory.
@@ -23,7 +23,7 @@ use std::fs;
 /// The function relies on the presence of the `HOME` environment variable to locate the user's
 /// home directory. If the environment variable is not set, the behavior may be undefined.
 pub fn rc_exists() -> bool {
-    let home = format!("{}.witchrc", get_os_env("HOME"));
+    let home = format!("{}.witchrc", get_os_env_paths_only("HOME"));
     fs::metadata(home).is_ok()
 }
 
@@ -102,7 +102,7 @@ pub fn witchy_if_rc_key_exists(key: &str) -> bool {
 /// are returned
 pub fn witchy_readrc_value(key: &str) -> String {
     let fkey = format!("{}=", key);
-    let home = format!("{}.witchrc", get_os_env("HOME"));
+    let home = format!("{}.witchrc", get_os_env_paths_only("HOME"));
 
     if !rc_exists() {
         "error".to_string();

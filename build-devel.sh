@@ -34,14 +34,30 @@ sudo cp -r ./witchcraft/target/release/witchcraft /bin/witchcraft
 echo && echo "Build dist packages"
 rm -rf ./dist
 mkdir ./dist
+mkdir ./dist/lite
+mkdir ./dist/full
 
 echo && echo "Creating the installer"
-cp spellbook/archive/scripts/installer.sh dist/
-cp spellbook/archive/scripts/uninstall.sh dist/
-cp -r ./witchcraft/target/release/witchcraft ./dist/
-cp -r spellbook ./dist
-zip -r witchcraft.zip dist/ > /dev/null
-mv witchcraft.zip dist/
-rm -r dist/spellbook  dist/witchcraft
+cp spellbook/archive/scripts/installer.sh dist/lite
+cp spellbook/archive/scripts/uninstall.sh dist/lite
+
+cp spellbook/archive/scripts/installer.sh dist/full
+cp spellbook/archive/scripts/uninstall.sh dist/full
+
+cp -r ./witchcraft/target/release/witchcraft ./dist/lite
+cp -r ./witchcraft/target/release/witchcraft ./dist/full
+
+cp -r spellbook ./dist/lite
+cp hidden/spellbook.tar.xz ./dist/full
+
+zip -r witchcraft_lite.zip dist/lite/ > /dev/null
+zip -r witchcraft_full.zip dist/full/ > /dev/null
+
+rm -r dist/lite
+rm -r dist/full
+
+mv witchcraft_lite.zip dist/
+mv witchcraft_full.zip dist/
+
 
 echo && echo "Done!"

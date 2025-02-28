@@ -4,14 +4,16 @@ use crate::core::data::*;
 use crate::core::logger::core_logger;
 use crate::core::structs::DataSet;
 use chrono;
-use colored::*;
 use regex::Regex;
 use std::env;
 use std::fs;
+use std::io;
+use std::io::Write;
 use std::net::IpAddr;
 use std::path::Path;
 use std::process::{Command, Output};
 use std::str::FromStr;
+use termimad::crossterm::style::Stylize;
 
 /// Reads command line arguments and returns them as a `Vec<String>`.
 ///
@@ -121,9 +123,16 @@ pub fn raise(arg: &str, warning_type: &str) -> String {
         _ => "", // Empty message
     };
 
-    let formatted_output = format!("{} {}", out.to_uppercase(), arg);
+    let mut formatted_output = format!("{} {}", out.to_uppercase(), arg);
+    if formatted_output.len() < 120 {
+        formatted_output = format!(
+            "{}{}",
+            formatted_output,
+            " ".repeat(120 - formatted_output.len())
+        );
+    }
 
-    println!("{}", formatted_output.bold());
+    println!("{}", formatted_output.clone().bold().magenta());
     formatted_output
 }
 
@@ -195,7 +204,7 @@ pub fn search_value(key: &str, argsv: &[String]) -> String {
 /// let value = search_key("config", &argsv);
 /// assert_eq!(value, "release");
 /// ```
-pub fn search_key(key: &str, argsv: &[String]) -> String {
+pub fn _search_key(key: &str, argsv: &[String]) -> String {
     for item in argsv {
         if item == key {
             return item.to_string();
@@ -443,7 +452,13 @@ pub fn raw_exec(command_line: String) -> Option<Output> {
 pub fn lazy_exec(command_line: String) -> i32 {
     match raw_exec(command_line.clone()) {
         Some(output) => {
-            core_logger(&output, &command_line);
+            if !core_logger(&output, &command_line) {
+                raise(
+                    "Logger are enabled, but the log files was being created",
+                    "fail",
+                );
+            }
+
             if output.status.success() {
                 let stdout = String::from_utf8_lossy(&output.stdout);
                 let lines = stdout.split("\n");
@@ -451,6 +466,7 @@ pub fn lazy_exec(command_line: String) -> i32 {
                     let result = witch_fmt(line, 180);
                     for line in result {
                         println!("\t{}", line);
+                        io::stdout().flush().unwrap();
                     }
                 }
             } else {
@@ -568,6 +584,7 @@ pub fn directory_lookup(dir: &Path) -> Vec<String> {
 pub fn closure_shell(options: Closure, argsv: &[String]) -> i32 {
     if argsv.len() % 2 != 0 {
         println!("{}", WITCH);
+        println!("{}", BOTTOM_TEXT);
         return 0;
     }
 
@@ -688,6 +705,20 @@ pub fn get_os_env(key: &str) -> String {
             String::new()
         }
     }
+}
+
+// A variation of get_os_env function that handle better the home variable.
+pub fn get_os_env_paths_only(path: &str) -> String {
+    let largatixa = get_os_env(path).to_string();
+
+    if largatixa.is_empty() {
+        return "./".to_string();
+    }
+
+    if largatixa.ends_with("/") {
+        return largatixa;
+    }
+    return format!("{}/", largatixa);
 }
 
 /// Show witchcraft software version!
