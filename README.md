@@ -97,15 +97,13 @@ witchcraft server.eviltwin --address 127.0.0.1:9000 --path foo/bar/index.html
 
 [SingleFile Extension](https://addons.mozilla.org/en-US/firefox/addon/single-file/)
 
-# RC FILE
+RC FILE
+To record logs of all your interactions in a smartlog that can be used for data analisys and
+automatic report generation, just run:
 
-To log interactions, create `.witchrc` in your home folder and add:
-
-```plaintext
-path_log_file=~/my_frog.jsonl
+```console
+    witchcraft witchrc
 ```
-
-Replace `~/` with a specific path if desired.
 
 # FLAGS SCLF
 

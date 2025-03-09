@@ -1,1 +1,1 @@
-pub type Closure = Vec<(&'static str, fn(&[String]) -> i32)>;
+pub type CommandRegistry = Vec<(&'static str, fn(&[String]) -> i32)>;

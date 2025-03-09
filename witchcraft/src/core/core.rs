@@ -1,4 +1,4 @@
-use super::types::Closure;
+use super::types::CommandRegistry;
 use crate::core::consts::*;
 use crate::core::data::*;
 use crate::core::logger::core_logger;
@@ -453,10 +453,12 @@ pub fn lazy_exec(command_line: String) -> i32 {
     match raw_exec(command_line.clone()) {
         Some(output) => {
             if !core_logger(&output, &command_line) {
-                raise(
-                    "Logger are enabled, but the log files was being created",
-                    "fail",
-                );
+                if SW_DEBUG {
+                    raise(
+                        "Logger are enabled, but the log files are not being created",
+                        "fail",
+                    );
+                }
             }
 
             if output.status.success() {
@@ -471,7 +473,7 @@ pub fn lazy_exec(command_line: String) -> i32 {
                 }
             } else {
                 let stderr = String::from_utf8_lossy(&output.stderr);
-                raise(&format!("{}", stderr.to_string()), "");
+                raise(&format!("{}", stderr.to_string()), "fail");
             }
             println!(" ");
             output.status.code().unwrap_or(128)
@@ -581,7 +583,7 @@ pub fn directory_lookup(dir: &Path) -> Vec<String> {
 /// let status = closure_shell(options, &["arg1".to_string(), "arg2".to_string()]);
 /// println!("Exit status: {}", status); // Prints the exit status of the command
 /// ```
-pub fn closure_shell(options: Closure, argsv: &[String]) -> i32 {
+pub fn closure_shell(options: CommandRegistry, argsv: &[String]) -> i32 {
     if argsv.len() % 2 != 0 {
         println!("{}", WITCH);
         println!("{}", BOTTOM_TEXT);

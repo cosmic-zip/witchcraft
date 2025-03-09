@@ -1,5 +1,7 @@
 use crate::core::core::get_os_env_paths_only;
 use std::fs;
+use std::fs::OpenOptions;
+use std::io::Write;
 
 /// Checks if the configuration file `.witchrc` exists in the user's home directory.
 ///
@@ -123,4 +125,41 @@ pub fn witchy_readrc_value(key: &str) -> String {
             return "".to_string();
         }
     }
+}
+
+/// Creates or updates a `.witchrc` configuration file in the user's home directory.
+///
+/// This function checks if the `.witchrc` file already exists using the `rc_exists` function.
+/// If the file exists, it appends a new configuration line to the file. If the file does not exist,
+/// it creates the file and writes the configuration line.
+///
+/// The configuration line added to the file is:
+/// ```plaintext
+/// path_log_file=~/witchcraft_smartlog.jsonl
+/// ```
+///
+/// # Returns
+/// - `false`: This function always returns `false`. The return value is currently not used
+///   and may be updated in future versions to indicate success or failure.
+///
+/// # Panics
+/// - This function will panic if it fails to open or write to the `.witchrc` file.
+///
+/// # Example
+/// ```rust
+/// let result = create_rc_default();
+/// assert_eq!(result, false); // Currently always returns `false`
+/// ```
+pub fn create_rc_default(_argsv: &[String]) -> i32 {
+    if !rc_exists() {
+        let home = get_os_env_paths_only("HOME");
+        let mut file = OpenOptions::new()
+            .append(true)
+            .create(true)
+            .open(&format!("{}.witchrc", home))
+            .unwrap();
+        writeln!(file, "path_log_file=~/witchcraft_smartlog.jsonl").unwrap();
+    }
+
+    0
 }
