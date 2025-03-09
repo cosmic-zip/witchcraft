@@ -157,14 +157,11 @@ EVILPAGES
     https://addons.mozilla.org/en-US/firefox/addon/single-file/
 
 RC FILE
-    To record logs of all your interactions, create a file named .witchrc in your
-    home folder and add the following line to it:
+    To record logs of all your interactions in a smartlog that can be used for data analisys and
+    automatic report generation, just run:
 
-    path_log_file=~/my_frog.jsonl
+    witchcraft witchrc
 
-    You can use ~/ to represent your home directory or specify the complete path, such as:
-
-    path_log_file=/path/to/my/file.jsonl
 
 FLAGS SCLF
     Standard Command-Line Flags (SCLF): All commands managed by the Witchcraft engine
@@ -344,9 +341,10 @@ pub static BOTTOM_TEXT: &str = r#"
     "88"888    888     88,    `88bo,__,o,  888   "88o`88bo,__,o,  888b "88bo, 888   888, 888         88,
      "M "M"    MMM     MMM      "YUMMMMMP" MMM    YMM  "YUMMMMMP" MMMM   "W"  YMM   ""`  "MM,        MMM
 
-    ⚪ Hint :: help                > show a overall manual page
-    ⚪ Hint :: manual              > show a complete manual page
-    ⚪ Hint :: tldr --page command > show a tldr markdown about a command from linux/bsd/android/win/osx
+    ⚪ Hint :: help                > Show a overall manual page
+    ⚪ Hint :: manual              > Show a complete manual page
+    ⚪ Hint :: tldr --page command > Show a tldr markdown about a command from unix/bsd/android/win/osx
+    ⚪ Hint :: witchrc             > Record logs of all your interactions in a smartlog file
     ⚪ Hint :: The installed spellbook might be the light version. Please read the docs for more details.
 
 "#;
