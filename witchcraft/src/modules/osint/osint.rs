@@ -1,8 +1,8 @@
-use crate::core::types::Closure;
+use crate::core::types::CommandRegistry;
 use crate::modules::osint::lookup::*;
 use crate::modules::osint::meta_search::social_links;
 
-pub fn api() -> Closure {
+pub fn api() -> CommandRegistry {
     vec![
         ("search.ans", search_ans),
         ("search.geoloc", search_geoloc),

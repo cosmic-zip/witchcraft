@@ -1,5 +1,5 @@
 use crate::{
-    core::{core::*, data::data, types::Closure},
+    core::{core::*, data::data, types::CommandRegistry, witchrc::create_rc_default},
     modules::binds::sysinfo::maid_info,
 };
 
@@ -71,6 +71,10 @@ pub fn flawless_entry_point(argsv: &[String]) -> i32 {
     42
 }
 
-pub fn api() -> Closure {
-    vec![("file.zz", file_compact), ("maidz", maid_info)]
+pub fn api() -> CommandRegistry {
+    vec![
+        ("file.zz", file_compact),
+        ("maidz", maid_info),
+        ("witchrc", create_rc_default),
+    ]
 }
