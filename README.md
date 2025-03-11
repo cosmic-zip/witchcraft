@@ -24,7 +24,7 @@
 
 # DESCRIPTION
 
-WITCHCRAFT is a powerful cybersecurity toolkit providing tools for forensic analysis, OSINT, scanning, backups, data copying, and penetration testing for applications and APIs. Its flexibility makes it suitable for a wide range of security tasks.
+WITCHCRAFT is a cyberdeck toolkit built for runners who dive deep into the NET. It’s your all-in-one rig for data-ghosting, ICE-breaking, and corp-system infiltration. Whether you’re running forensic traces, scraping OSINT feeds, or slicing through firewalls, WITCHCRAFT’s got your back.
 
 # EXAMPLES
 
