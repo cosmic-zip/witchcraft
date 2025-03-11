@@ -10,17 +10,17 @@ pub fn base_sixfour(argsv: &[String]) -> i32 {
         "encode" => {
             let out = general_purpose::STANDARD.encode(data.as_bytes());
             raise(&out, "message");
-        },
+        }
         "decode" => {
             // Use improved error handling from previous comment
             match general_purpose::STANDARD.decode(data) {
-                Ok(out) => {
-                    match String::from_utf8(out) {
-                        Ok(decoded_str) => raise(&decoded_str, "message"),
-                        Err(_) => {
-                            raise("Decoded data is not valid UTF-8", "error");
-                            return 1;
-                        }
+                Ok(out) => match String::from_utf8(out) {
+                    Ok(decoded_str) => {
+                        raise(&decoded_str, "message");
+                    }
+                    Err(_) => {
+                        raise("Decoded data is not valid UTF-8", "error");
+                        return 1;
                     }
                 },
                 Err(e) => {
@@ -28,9 +28,12 @@ pub fn base_sixfour(argsv: &[String]) -> i32 {
                     return 1;
                 }
             }
-        },
+        }
         _ => {
-            raise(&format!("Invalid option: '{}'. Use 'encode' or 'decode'", option), "error");
+            raise(
+                &format!("Invalid option: '{}'. Use 'encode' or 'decode'", option),
+                "error",
+            );
             return 1;
         }
     }
