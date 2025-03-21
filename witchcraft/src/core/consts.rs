@@ -34,6 +34,7 @@ pub const MAGIC_DOCS: &[(&str, &str)] = &[
         "Virtual or physical device like a HDD, SSD, Virtual disk",
     ),
     ("dns", "Domain name"),
+    ("option", "encode or decode"),
     ("domain", "Domain name"),
     ("database_name", "Database name"),
     ("data", "Any data input like \"some data here!\""),

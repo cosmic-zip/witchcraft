@@ -11,6 +11,11 @@
             "command": ""
         },
         {
+            "name": "base64",
+            "description": "🟠 Section B",
+            "command": "base64 @@option @@data"
+        },
+        {
             "name": "mac.spoff",
             "description": "Change to a Random MAC Address",
             "command": "macchanger -r @@interface"
