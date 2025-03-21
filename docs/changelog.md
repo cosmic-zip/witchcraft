@@ -1,18 +1,19 @@
-![banner](docs/images/splited.png)
+Version: 0.37.0
 
-![banner](docs/images/lineBar.png)
+Date: Fri Mar 21 02:32:48 PM -03 2025
 
-[![witchcraft-cybersecurity](https://snapcraft.io/witchcraft-cybersecurity/badge.svg)](https://snapcraft.io/witchcraft-cybersecurity)
-![witchcraft](https://img.shields.io/github/actions/workflow/status/cosmic-zip/witchcraft/witchcraft.yml)
-![GitHub issues](https://img.shields.io/github/issues/cosmic-zip/witchcraft)
-![GitHub License](https://img.shields.io/github/license/cosmic-zip/witchcraft)
-![GitHub top language](https://img.shields.io/github/languages/top/cosmic-zip/witchcraft)
+    Added base64 feature
 
-<p align="center">
-  🎉 Your OPSEC companion. Run witchcraft help or witchcraft manual (for the complete manual) 🎉
-</p>
+    Update spellbook fuzzing and dataset
+
+    Update project description
+
+    Hotfix removed timer and timer threads
+
+    Hotfix seth submodule syntax bug
 
 Version: 0.36.10
+
 Date: Mon Feb 17 10:35:09 AM -03 2025
 
     Added progress indicator
@@ -30,6 +31,7 @@ Date: Mon Feb 17 10:35:09 AM -03 2025
     Removed all unused files in docs/
 
 Version: 0.35.10
+
 Date: Thu Jan 30 12:07:57 PM -03 2025
 
     Added witchcraft tldr
@@ -47,6 +49,7 @@ Date: Thu Jan 30 12:07:57 PM -03 2025
     Move social engineering related modules to seth module
 
 Version 0.34.30
+
 Date: Thu Jan 16 02:19:43 PM -03 2025
 
     Added and fixed dataset/db.json sections, evilpages/default/index.html
@@ -62,6 +65,7 @@ Date: Thu Jan 16 02:19:43 PM -03 2025
     Replaced sample evilpage for a new one
 
 Version 0.34.10
+
 Date: Mon Jan 13 16:28:26 2025 -0300
 
     Updated meta search
@@ -69,6 +73,7 @@ Date: Mon Jan 13 16:28:26 2025 -0300
     Updated the spellbook
 
 Revision 0.33.700
+
 Date: Fri Nov 29 10:50:24 AM -03 2024
 
     Added spellbook installer
@@ -80,6 +85,7 @@ Date: Fri Nov 29 10:50:24 AM -03 2024
     Updated readme/consts/snapfile
 
 Version 0.33.666
+
 Date: Mon Nov 18 14:30:19 2024 -0300
 
     Final codebase version
@@ -89,6 +95,7 @@ Date: Mon Nov 18 14:30:19 2024 -0300
     Created a new build and build-dist script
 
 Revision 0.20.56
+
 Date: Thu Nov 7 18:06:53 -03 2024
 
     Added build-dist.sh to build a binary a compiled version of witchcraft
@@ -104,6 +111,7 @@ Date: Thu Nov 7 18:06:53 -03 2024
     Fixed build.sh
 
 Revision: 0.20.25
+
 Date: Thu Nov 7 18:06:53 -03 2024
 
     Added chkrootkit binding
@@ -117,6 +125,7 @@ Date: Thu Nov 7 18:06:53 -03 2024
     Removed unused dependencies
 
 Revision 0.20.21
+
 Date: Wed Nov 6 10:38:08 AM -03 2024
 
     Update revision to 0.20.21
@@ -132,6 +141,7 @@ Date: Wed Nov 6 10:38:08 AM -03 2024
     Updated documentation
 
 Revision 0.20.20
+
 Date: Sun Nov 3 21:56:30 -03 2024
 
     Refactored OSINT meta search
@@ -143,11 +153,13 @@ Date: Sun Nov 3 21:56:30 -03 2024
     Small fixes for github CI/CD, Snapcraft, Dockerfile and readme
 
 Version: 0.20.0
+
 Date: Sat Oct 26 07:09:02 PM -03 2024
 
     Launched LTS release 0.20.0
 
 Version: 0.19.0
+
 Date: Fri Oct 25 02:22:50 PM -03 2024
 
     Added social media osint research using headless_chrome
@@ -193,6 +205,7 @@ Date: Fri Oct 25 02:22:50 PM -03 2024
     Removed hardcoded path in favor of WITCH_SPELLS_ROOT_DIR
 
 Version 0.18.5
+
 Date: Wed Oct 9 12:37:18 PM -03 2024
 
     Added eviltwin http server
@@ -202,6 +215,7 @@ Date: Wed Oct 9 12:37:18 PM -03 2024
     Update dataset.json
 
 Version 0.18.2
+
 Date: Sat Oct 5 10:37:26 AM -03 2024
 
     Added bind fhide based on steghide for steganography
@@ -213,6 +227,7 @@ Date: Sat Oct 5 10:37:26 AM -03 2024
     Update showcase
 
 Version 0.18.0
+
 Date: Mon Sep 16 11:35:28 AM -03 2024
 
     Added Ip lookup for ANS, IP Geo-location and proxy
@@ -222,6 +237,7 @@ Date: Mon Sep 16 11:35:28 AM -03 2024
     Removed wiki (wiki will be inside cosmic-zip.github.io only)
 
 Version 0.17.72
+
 Date: Mon Sep 9 11:42:09 AM -03 2024
 
     Removed general/wordlists
@@ -239,6 +255,7 @@ Date: Mon Sep 9 11:42:09 AM -03 2024
     Updated witchcraft version
 
 Version 0.17.65
+
 Date: Fri Aug 30 07:12:51 PM -03 2024
 
     Rebuild all backends
@@ -256,6 +273,7 @@ Date: Fri Aug 30 07:12:51 PM -03 2024
     Add process::exit to the main function
 
 Version 0.17.10
+
 Date: Tue Aug 20 08:30:19 PM -03 2024
 
     Rollback signature based AV with a new backend
@@ -269,6 +287,7 @@ Date: Tue Aug 20 08:30:19 PM -03 2024
     Updated malware list
 
 Version 0.17.3
+
 Date: Tue Aug 13 05:13:55 PM -03 2024
 
     Add binds inside db.json
@@ -280,6 +299,7 @@ Date: Tue Aug 13 05:13:55 PM -03 2024
     Fixed lint warnings
 
 Version 0.17.1
+
 Date: Sun Aug 11 04:23:53 PM -03 2024
 
     Alive2 update - back witchcraft development
@@ -323,6 +343,7 @@ Version 0.16.0 Backend rebuild from scretch
     Backend now follows a meta-string based CLI architecture.
 
 Version: 0.15.0 Rebranding witchcraft
+
 Date: sáb 06 jan 2024 13:32:33 -03
 
     Re-brand all projects to witchcraft.
@@ -348,6 +369,7 @@ Date: sáb 06 jan 2024 13:32:33 -03
     Removed manual section from README.md; all manuals are generated by helping it function itself.
 
 Version 0.14.0:
+
 Date: sex 29 dez 2023 20:51:45 -03
 
     Implemented city_geo_location function
@@ -379,6 +401,7 @@ Date: sex 29 dez 2023 20:51:45 -03
     Hardcoded debug option to force take_system_args return an empty string instead of an error message
 
 Version 0.13.9
+
 Date: sex 22 dez 2023 20:14:37 -03
 
     Re-implemented Debug Flag Feature
@@ -398,6 +421,7 @@ Date: sex 22 dez 2023 20:14:37 -03
     Update firewall unit tests.
 
 Version 0.13.0
+
 Date: seg 27 nov 2023 17:08:28 -03
 
     Optimized overhead and removed memory leaks.
@@ -435,6 +459,7 @@ Date: seg 27 nov 2023 17:08:28 -03
     Removed old documentation.
 
 Version 0.12.2
+
 Date: ter 20 nov 2023 12:00:00 -03
 
     Fixed small bugs inside core module.
@@ -442,6 +467,7 @@ Date: ter 20 nov 2023 12:00:00 -03
     Fixed missing documentation.
 
 Version 0.12.1
+
 Date: ter 24 out 2023 02:26:27 -03
 
     Added maid_visual logger visualization for all categories
@@ -463,6 +489,7 @@ Date: ter 24 out 2023 02:26:27 -03
     Updated ZeroVer version system maximum number to 0.99.99
 
 Version 0.12.0
+
 Date: sáb 21 out 2023 01:09:01 -03
 
     Transition to MONOREPO repository architecture
@@ -494,6 +521,7 @@ Date: sáb 21 out 2023 01:09:01 -03
     Fixed MEOW file parser that caused panic if an variable have and string with spaces
 
 Version 0.9.7
+
 Date: qua 18 out 2023 05:33:38 -03
 
     Added codium code-workspace
@@ -525,6 +553,7 @@ Date: qua 18 out 2023 05:33:38 -03
     Fixed sub domains and dir scanner output file path
 
 Version 0.9.0
+
 Date: seg 09 out 2023 21:18:50 -03
 
     Added maid_av Active antivirus scanner
@@ -554,6 +583,7 @@ Date: seg 09 out 2023 21:18:50 -03
     Updated gitignore content
 
 Version 0.8.0
+
 Date: dom 01 out 2023 16:46:59 -03
 
     Refactored code base with Rustfmt and LLama2
@@ -587,6 +617,7 @@ Date: dom 01 out 2023 16:46:59 -03
     Fixed unit tests hard coded file path
 
 Version 0.7.1
+
 Date: qua 13 set 2023 17:07:56 -03
 
     Updated main README.md
@@ -616,6 +647,7 @@ Date: qua 13 set 2023 17:07:56 -03
     Added maid_lists dice_eff_words.ascii
 
 Version 0.7.0
+
 Date: sáb 09 set 2023 09:48:03 -03
 
     Added curl binds (all http verbs)
@@ -631,6 +663,7 @@ Date: sáb 09 set 2023 09:48:03 -03
     Fixed github workflow dependencies
 
 Version 0.6.4
+
 Date: ter 29 ago 2023 11:12:17 -03
 
     Added report creation and export as JSON.
@@ -656,6 +689,7 @@ Date: ter 29 ago 2023 11:12:17 -03
     Report JSON with known bugs.
 
 Version 0.6.1
+
 Date: Qua 23 ago 2023 16:24:22 -03
 
     Merge new shell commands
@@ -667,6 +701,7 @@ Date: Qua 23 ago 2023 16:24:22 -03
     New shell- String handle- Scanners- Lookups- Files- Fix smal bugs at web_scanner
 
 Version 0.5.0 Rebuild for #maid_runner_toolkit
+
 Date: Tue, Aug 8, 2023, 06:14:42 PM →03
 
     Old Code Base Revamped: The old code base has been dropped due to extensive experimentation and issues arising from an overly complex shell, which made adding new features challenging.
@@ -688,6 +723,7 @@ Date: Tue, Aug 8, 2023, 06:14:42 PM →03
     Integration of hacklib: The 'hacklib' interface library has been included, enriching system capabilities and interactions.
 
 Version 0.2.62
+
 Date: Tue Jul 25 02:39:05 PM →03 2023
 
     Update the README.
@@ -697,6 +733,7 @@ Date: Tue Jul 25 02:39:05 PM →03 2023
     Remove unused variables from the enumeration module.
 
 Version 0.2.60
+
 Date: Пт 30 июн 2023 12:45:53 MSK
 
     Move all functions from
