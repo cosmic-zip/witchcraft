@@ -1,4 +1,4 @@
-![banner](docs/images/splited.png)
+![banner](docs/images/banner-snapstore.png)
 
 ![banner](docs/images/lineBar.png)
 
@@ -11,6 +11,14 @@
 <p align="center">
   🎉 Your OPSEC companion. Run witchcraft help or witchcraft manual (for the complete manual) 🎉
 </p>
+
+---
+
+# What it does?
+
+WITCHCRAFT Are much more than a simple alias, it's a init system that can works with busybox, a shell and automation's and automation's engine for hacking, osint, forensics, etc.
+
+![banner](docs/images/dig.png)
 
 ---
 
