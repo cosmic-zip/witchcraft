@@ -4,7 +4,7 @@ pub const SPLIT_II: &str = "--";
 pub const SPLIT_I: &str = "-";
 pub const DBPATH: &str = "dataset/db.json";
 pub const WITCH_SPELLS_ROOT_DIR: &str = "/var/spellbook/archive/";
-pub const VERSION: &str = "Version: 0.36.10 by cosmic-zip";
+pub const VERSION: &str = "Version: 0.37.0 by cosmic-zip";
 
 pub const _PROGRESS_BAR: [&'static str; 10] = [
     "█▒▒▒▒▒▒▒▒▒ 10% ",

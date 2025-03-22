@@ -1,5 +1,5 @@
 name: witchcraft-cybersecurity
-version: "0.36.10"
+version: "0.37.0"
 summary: witchcraft - A versatile toolkit for cybersecurity.
 grade: stable
 confinement: strict
