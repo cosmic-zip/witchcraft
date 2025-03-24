@@ -1,4 +1,4 @@
-pub const SW_DEBUG: bool = false;
+pub const SW_DEBUG: bool = true;
 pub const TONK: &str = "@@";
 pub const SPLIT_II: &str = "--";
 pub const SPLIT_I: &str = "-";

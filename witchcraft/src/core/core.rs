@@ -1,4 +1,5 @@
 use super::types::CommandRegistry;
+use super::witchrc::witchy_readrc_value;
 use crate::core::consts::*;
 use crate::core::data::*;
 use crate::core::logger::core_logger;
@@ -517,6 +518,47 @@ pub fn flawless_exec(set: DataSet, argsv: &[String]) -> i32 {
     lazy_exec(cmd)
 }
 
+// Executes a command within the context of a specified dataset from the `DataSet` collection.
+///
+/// This function serves as a specialized implementation of `lazy_exec` for `DataSet` operations.
+/// It searches for a dataset matching the provided name in the first argument and either:
+/// - Executes the command in the context of the matched dataset using `flawless_exec`, or
+/// - Falls back to `lazy_exec` with the remaining arguments if no match is found
+///
+/// # Arguments
+/// * `argsv` - A slice of Strings containing:
+///   - The first element should be the dataset name to match against
+///   - Remaining elements form the command to execute
+///
+/// # Returns
+/// The exit status code from either:
+/// - `flawless_exec` if a dataset match is found
+/// - `lazy_exec` if no dataset match is found
+/// - 42 if no datasets are available (unreachable if data() always returns non-empty)
+///
+/// # Behavior
+/// - Uses the fields of the matched `DataSet` structure to customize command execution
+/// - Joins remaining arguments with spaces when falling back to `lazy_exec`
+/// - Returns immediately upon finding first matching dataset
+pub fn flawless_entry_point(argsv: &[String]) -> i32 {
+    let mname = argsv[1].as_str();
+    let data = data();
+    for set in data {
+        if set.name == mname {
+            return flawless_exec(set.clone(), argsv);
+        }
+    }
+
+    if witchy_readrc_value("exec_external_command") == "yes" {
+        if SW_DEBUG {
+            raise("Exec external command is enabled", "warning");
+        }
+        return lazy_exec(argsv[1..].join(" "));
+    }
+
+    255
+}
+
 /// Recursively collects the paths of all files in a given directory and its subdirectories.
 ///
 /// This function takes a reference to a `Path`, traverses the directory, and returns
@@ -553,14 +595,14 @@ pub fn directory_lookup(dir: &Path) -> Vec<String> {
     files
 }
 
-/// Executes a closure shell with a custom set of commands defined by a `Closure` type.
+/// Executes a CommandRegistry shell with a custom set of commands defined by a `CommandRegistry` type.
 ///
 /// The function takes a vector of tuples, where each tuple consists of a command name
 /// and a corresponding function that implements the command logic. It executes the
 /// command associated with the provided arguments and returns the standard exit status.
 ///
 /// # Arguments
-/// * `options` - A `Closure`, which is a vector of tuples. Each tuple contains:
+/// * `options` - A `CommandRegistry`, which is a vector of tuples. Each tuple contains:
 ///     - A `&'static str` representing the command name.
 ///     - A function pointer (`fn(&[String]) -> i32`) that executes the command logic.
 /// * `argsv` - A slice of `String` representing the arguments to pass to the command function.
@@ -571,7 +613,7 @@ pub fn directory_lookup(dir: &Path) -> Vec<String> {
 ///
 /// # Example
 /// ```
-/// type Closure = Vec<(&'static str, fn(&[String]) -> i32)>;
+/// type CommandRegistry = Vec<(&'static str, fn(&[String]) -> i32)>;
 ///
 /// fn command_function(argsv: &[String]) -> i32 {
 ///     // Command implementation
@@ -579,11 +621,11 @@ pub fn directory_lookup(dir: &Path) -> Vec<String> {
 ///     0 // Indicate success
 /// }
 ///
-/// let options: Closure = vec![("command.name", command_function)];
-/// let status = closure_shell(options, &["arg1".to_string(), "arg2".to_string()]);
+/// let options: CommandRegistry = vec![("command.name", command_function)];
+/// let status = command_shell(options, &["arg1".to_string(), "arg2".to_string()]);
 /// println!("Exit status: {}", status); // Prints the exit status of the command
 /// ```
-pub fn closure_shell(options: CommandRegistry, argsv: &[String]) -> i32 {
+pub fn command_shell(options: CommandRegistry, argsv: &[String]) -> i32 {
     if argsv.len() % 2 != 0 {
         println!("{}", WITCH);
         println!("{}", BOTTOM_TEXT);
@@ -598,7 +640,7 @@ pub fn closure_shell(options: CommandRegistry, argsv: &[String]) -> i32 {
         }
     }
 
-    11223300
+    return 8080;
 }
 
 /// Reads the contents of a file and returns its lines as a `Vec<String>`.
