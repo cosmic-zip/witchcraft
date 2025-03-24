@@ -105,12 +105,25 @@ witchcraft server.eviltwin --address 127.0.0.1:9000 --path foo/bar/index.html
 
 [SingleFile Extension](https://addons.mozilla.org/en-US/firefox/addon/single-file/)
 
-RC FILE
+WITCHRC FILE
 To record logs of all your interactions in a smartlog that can be used for data analisys and
 automatic report generation, just run:
 
 ```console
     witchcraft witchrc
+```
+
+Execute arbitrary shell commands through the program interface.
+
+    SECURITY NOTE:
+    This function will execute ANY provided command string in the system shell with
+    the same privileges as the host process. Use with extreme caution.
+
+    REQUIRED CONFIGURATION:
+    Must first enable in ~/.wtchrc by adding:
+
+```text
+    exec_external_command=yes
 ```
 
 # FLAGS SCLF
