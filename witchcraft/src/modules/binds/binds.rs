@@ -1,5 +1,5 @@
 use crate::{
-    core::{core::*, data::data, types::CommandRegistry, witchrc::create_rc_default},
+    core::{core::*, types::CommandRegistry, witchrc::create_rc_default},
     modules::binds::sysinfo::maid_info,
 };
 
@@ -59,17 +59,7 @@ pub fn file_compact(argsv: &[String]) -> i32 {
     lazy_exec(command)
 }
 
-pub fn flawless_entry_point(argsv: &[String]) -> i32 {
-    let mname = argsv[1].as_str();
-    let data = data();
-    for set in data {
-        if set.name == mname {
-            return flawless_exec(set.clone(), argsv);
-        }
-    }
 
-    42
-}
 
 pub fn api() -> CommandRegistry {
     vec![

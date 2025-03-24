@@ -1,18 +1,18 @@
 {
     "general": [
         {
-            "name": "a",
+            "name": "a.",
             "description": "🟠 Section A",
             "command": ""
         },
         {
-            "name": "b",
+            "name": "b.",
             "description": "🟠 Section B",
             "command": ""
         },
         {
             "name": "base64",
-            "description": "🟠 Section B",
+            "description": "Encode or Decode to base64",
             "command": "base64 @@option @@data"
         },
         {
@@ -141,7 +141,7 @@
             "command": "rfkill list"
         },
         {
-            "name": "c",
+            "name": "c.",
             "description": "🟠 Section C",
             "command": ""
         },
@@ -191,7 +191,7 @@
             "command": "hashcat -m 13600 -a 0 @@file @@wordlist"
         },
         {
-            "name": "d",
+            "name": "d.",
             "description": "🟠 Section D",
             "command": ""
         },
@@ -216,12 +216,12 @@
             "command": "dos.spam @@domain @@times"
         },
         {
-            "name": "e",
+            "name": "e.",
             "description": "🟠 Section E",
             "command": ""
         },
         {
-            "name": "f",
+            "name": "f.",
             "description": "🟠 Section F",
             "command": ""
         },
@@ -316,37 +316,37 @@
             "command": "ftp @@address"
         },
         {
-            "name": "g",
+            "name": "g.",
             "description": "🟠 Section G",
             "command": ""
         },
         {
-            "name": "h",
+            "name": "h.",
             "description": "🟠 Section H",
             "command": ""
         },
         {
-            "name": "i",
+            "name": "i.",
             "description": "🟠 Section I",
             "command": ""
         },
         {
-            "name": "j",
+            "name": "j.",
             "description": "🟠 Section J",
             "command": ""
         },
         {
-            "name": "k",
+            "name": "k.",
             "description": "🟠 Section K",
             "command": ""
         },
         {
-            "name": "l",
+            "name": "l.",
             "description": "🟠 Section L",
             "command": ""
         },
         {
-            "name": "m",
+            "name": "m.",
             "description": "🟠 Section M",
             "command": ""
         },
@@ -406,7 +406,7 @@
             "command": "nmap -T3 -D RND:8 --script vuln @@target"
         },
         {
-            "name": "n",
+            "name": "n.",
             "description": "🟠 Section N",
             "command": ""
         },
@@ -426,17 +426,17 @@
             "command": "sudo find /var/log -type f -exec shred -u {} \\;"
         },
         {
-            "name": "o",
+            "name": "o.",
             "description": "🟠 Section O",
             "command": ""
         },
         {
-            "name": "p",
+            "name": "p.",
             "description": "🟠 Section P",
             "command": ""
         },
         {
-            "name": "q",
+            "name": "q.",
             "description": "🟠 Section Q",
             "command": ""
         },
@@ -446,12 +446,12 @@
             "command": "qrcode @@data"
         },
         {
-            "name": "r",
+            "name": "r.",
             "description": "🟠 Section R",
             "command": ""
         },
         {
-            "name": "s",
+            "name": "s.",
             "description": "🟠 Section S",
             "command": ""
         },
@@ -516,7 +516,7 @@
             "command": "curl -X POST -H \"Content-Type: application/json\" -d '{\"main\": \"somename\", \"@@message\": \"somemsg\"}' @@domain"
         },
         {
-            "name": "t",
+            "name": "t.",
             "description": "🟠 Section T",
             "command": ""
         },
@@ -526,12 +526,12 @@
             "command": "tldr @@page"
         },
         {
-            "name": "u",
+            "name": "u.",
             "description": "🟠 Section U",
             "command": ""
         },
         {
-            "name": "v",
+            "name": "v.",
             "description": "🟠 Section V",
             "command": ""
         },
@@ -616,7 +616,7 @@
             "command": "last -n 1000"
         },
         {
-            "name": "w",
+            "name": "w.",
             "description": "🟠 Section W",
             "command": ""
         },
@@ -626,17 +626,17 @@
             "command": "wget --recursive -U 'Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0' --page-requisites --html-extension --convert-links --restrict-file-names=windows --random-wait --wait=@@wait --limit-rate=200k --tries=inf --domains example.com --no-parent @@url"
         },
         {
-            "name": "x",
+            "name": "x.",
             "description": "🟠 Section X",
             "command": ""
         },
         {
-            "name": "y",
+            "name": "y.",
             "description": "🟠 Section Y",
             "command": ""
         },
         {
-            "name": "z",
+            "name": "z.",
             "description": "🟠 Section Z",
             "command": ""
         }

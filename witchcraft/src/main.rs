@@ -1,6 +1,6 @@
 use core::{consts::*, core::*};
 use modules::{
-    binds::binds::{self, flawless_entry_point},
+    binds::binds,
     blackcat::blackcat,
     network::network,
     osint::osint,
@@ -28,7 +28,7 @@ fn init(argsv: Vec<String>) {
         magic_docs();
     }
 
-    if arg_name == "manual" || arg_name == "h" {
+    if arg_name == "manual" || arg_name == "m" {
         raise(MAN_HEADER, "");
         magic_docs();
     }
@@ -37,12 +37,11 @@ fn init(argsv: Vec<String>) {
         show_version();
     }
 
-    let code = closure_shell(command_registry, &argsv);
-    if code == 11223300 {
-        let code = flawless_entry_point(&argsv);
-        process::exit(code);
+    let code = command_shell(command_registry, &argsv);
+    if code == 8080 {
+        let exit = flawless_entry_point(&argsv);
+        process::exit(exit);
     }
-
     process::exit(code);
 }
 
